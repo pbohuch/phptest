@@ -32,6 +32,7 @@ $greeter = new Greeter;
                 <li><a href="https://getbootstrap.com/docs/4.5/getting-started/introduction/" target="_blank">Bootstrap Reference</a></li>
                 <li><a href="https://www.packagist.org" target="_blank">Packagist</a></li>
             </ul>
+            <a href="/" target="_blank">Open New Window</a>
         </div>
     </main>
 </body>

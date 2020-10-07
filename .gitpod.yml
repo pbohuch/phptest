@@ -8,7 +8,8 @@ ports:
 tasks:
   - init: |
       composer install;
-      sh ./.gitpod/phpMyAdmin.sh
+      sh ./.gitpod/phpMyAdmin.sh;
+      gp preview $(gp url 8001);
   - name: Apache
     command: >
       apachectl start &&
