@@ -20,6 +20,8 @@ $resources = [
     'https://www.gitpod.io/docs/git/' => 'Gitpod Git Usage',
 ];
 
+// MySQL is available in the environment with "root" username and no password
+
 ?>
 
 <!doctype html>
