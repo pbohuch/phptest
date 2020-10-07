@@ -1,4 +1,4 @@
-FROM gitpod/workspace-full
+FROM gitpod/workspace-mysql
 
 RUN sudo apt-get update -q && \
     sudo apt-get install -yq redis-server php-dev php-imagick
