@@ -1,12 +1,24 @@
 <?php require_once('../vendor/autoload.php');
 
-class Greeter {
-    public function greet(string $greeting = 'Hello'): string {
+class Greeter
+{
+    public function greet(string $greeting = 'Hello'): string
+    {
         return $greeting . ' World';
     }
 }
 
 $greeter = new Greeter;
+
+$resources = [
+    'https://www.php.net/manual/en/langref.php' => 'PHP Language Reference',
+    'https://phptherightway.com/' => 'PHP "The Right Way"',
+    'https://getcomposer.org/doc/03-cli.md' => 'Composer Reference',
+    'https://getbootstrap.com/docs/4.5/getting-started/introduction/' => 'Bootstrap Reference',
+    'https://www.packagist.org' => 'Packagist',
+    'https://www.gitpod.io/docs/tips-and-tricks/' => 'Gitpod Tips and Tricks',
+    'https://www.gitpod.io/docs/git/' => 'Gitpod Git Usage',
+];
 
 ?>
 
@@ -27,10 +39,13 @@ $greeter = new Greeter;
             <h1 class="mt-5"><?= $greeter->greet('Greetings') ?></h1>
             <p>Some helpful starting points...</p>
             <ul>
-                <li><a href="https://www.php.net/manual/en/langref.php" target="_blank">PHP Language Reference</a></li>
-                <li><a href="https://getcomposer.org/doc/03-cli.md" target="_blank">Composer Reference</a></li>
-                <li><a href="https://getbootstrap.com/docs/4.5/getting-started/introduction/" target="_blank">Bootstrap Reference</a></li>
-                <li><a href="https://www.packagist.org" target="_blank">Packagist</a></li>
+                <?php foreach ($resources as $url => $title) : ?>
+                    <li>
+                        <a href="<?= $url ?>" target="_blank">
+                            <?= $title ?>
+                        </a>
+                    </li>
+                <?php endforeach ?>
             </ul>
             <a href="/" target="_blank">Open New Window</a>
         </div>
