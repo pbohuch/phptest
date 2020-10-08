@@ -2,13 +2,16 @@
 
 class Greeter
 {
+    public string $whom;
+
     public function greet(string $greeting = 'Hello'): string
     {
-        return $greeting . ' World';
+        return $greeting . ' ' . $this->whom;
     }
 }
 
 $greeter = new Greeter;
+$greeter->whom = 'World';
 
 $resources = [
     'https://www.php.net/manual/en/langref.php' => 'PHP Language Reference',
