@@ -13,6 +13,9 @@ class Greeter
 $greeter = new Greeter;
 $greeter->whom = 'World';
 
+// If you want to see your Apache console produce an error, comment out line 14 and watch
+// it respond to a greeting without a recipient.
+
 $resources = [
     'https://www.php.net/manual/en/langref.php' => 'PHP Language Reference',
     'https://phptherightway.com/' => 'PHP "The Right Way"',
