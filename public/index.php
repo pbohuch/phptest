@@ -2,13 +2,19 @@
 
 class Greeter
 {
+    public string $whom;
+
     public function greet(string $greeting = 'Hello'): string
     {
-        return $greeting . ' World';
+        return $greeting . ' ' . $this->whom;
     }
 }
 
 $greeter = new Greeter;
+$greeter->whom = 'World';
+
+// If you want to see your Apache console produce an error, comment out line 14 and watch
+// it respond to a greeting without a recipient.
 
 $resources = [
     'https://www.php.net/manual/en/langref.php' => 'PHP Language Reference',
