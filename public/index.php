@@ -22,6 +22,7 @@ $resources = [
     'https://getcomposer.org/doc/03-cli.md' => 'Composer Reference',
     'https://getbootstrap.com/docs/4.5/getting-started/introduction/' => 'Bootstrap Reference',
     'https://www.packagist.org' => 'Packagist',
+    'https://reactjs.org/docs/hello-world.html' => 'Introduction to React',
     'https://www.gitpod.io/docs/tips-and-tricks/' => 'Gitpod Tips and Tricks',
     'https://www.gitpod.io/docs/git/' => 'Gitpod Git Usage',
 ];
@@ -37,8 +38,10 @@ $resources = [
     <meta charset="utf-8">
     <title><?= $greeter->greet('Greetings') ?></title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 </head>
-
 
 <body class="d-flex flex-column h-100">
     <main role="main" class="flex-shrink-0">
@@ -56,8 +59,46 @@ $resources = [
                 <?php endforeach ?>
             </ul>
             <a href="/" target="_blank">Open New Window</a>
+            <hr/>
+            
+            <h3>Try React</h3>
+            <p>
+                React is our preferred JavaScript View library. Here's an example of a React
+                component embedded in a page.
+            </p>
+            <div id="react"></div>
         </div>
     </main>
 </body>
+
+
+<script type="text/babel">
+
+    function Timer(props) {
+        const [tick, setTick] = React.useState(0);
+
+        React.useEffect(
+            function() {
+                // This function will run once, when the component is mounted.
+                // Set an timer to update the ticks once per second.
+                const timeout = setInterval(function() {
+                    setTick(function(tick) {
+                        return tick + 1;
+                    });
+                }, 1000);
+
+                return function() {
+                    // This function will run when the component unmounts.
+                    // Here we free the resources we started above.
+                    clearTimeout(timeout);
+                };
+            }, []);
+
+        return <div>{tick} seconds have elapsed</div>;
+    }
+
+    ReactDOM.render(<Timer/>, 
+        document.querySelector('#react'));
+</script>
 
 </html>
