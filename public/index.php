@@ -25,6 +25,7 @@ $resources = [
     'https://reactjs.org/docs/hello-world.html' => 'Introduction to React',
     'https://www.gitpod.io/docs/tips-and-tricks/' => 'Gitpod Tips and Tricks',
     'https://www.gitpod.io/docs/git/' => 'Gitpod Git Usage',
+    'http://www.google.ca' => 'Google'
 ];
 
 // MySQL is available in the environment with "root" username and no password
